@@ -1,6 +1,7 @@
 import 'package:app_fiestas_angel/common/HttpHandler.dart';
 import 'package:app_fiestas_angel/models/programa.dart';
 import 'package:app_fiestas_angel/widgets/home_page/carousel_superior.dart';
+import 'package:app_fiestas_angel/widgets/home_page/section_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -38,151 +39,45 @@ class HomePage extends StatelessWidget {
                 crossAxisSpacing: 4,
                 mainAxisSpacing: 4,
                 children: [
+                  //Carrusel superior
                   CarouselSuperior(size: size, programa: programa),
 
-                  StaggeredGridTile.extent(
-                      mainAxisExtent: (size.height * 0.9) / 3,
-                      crossAxisCellCount: 1,
-                      child: Tile(index: 1,)
+                  //Seccion historia
+                  SectionHome(
+                    size: size,
+                    cells: 2,
+                    section_name: "Historia",
+                    background_image: "secion_historia_vaquilla.jpg",
                   ),
 
-                  StaggeredGridTile.extent(
-                      mainAxisExtent: (size.height * 0.9) / 3,
-                      crossAxisCellCount: 1,
-                      child: Tile(index: 2)
+                  //Seccion penas
+                  SectionHome(
+                      size: size,
+                      cells: 1,
+                      section_name: "Peñas",
+                      background_image: 'seccion_penas.JPG'
                   ),
 
-                  StaggeredGridTile.extent(
-                      mainAxisExtent: (size.height * 0.9) / 3,
-                      crossAxisCellCount: 1,
-                      child: Tile(index: 3)
+                  //Seccion notificaciones
+                  SectionHome(
+                      size: size,
+                      cells: 1,
+                      section_name: "Notificaciones",
+                      background_image: 'seccion_notificaciones.JPG'
                   ),
 
-                  StaggeredGridTile.extent(
-                      mainAxisExtent: (size.height * 0.9) / 3,
-                      crossAxisCellCount: 1,
-                      child: ImageTile(index: 4, width: 100, height: 100)
-                  ),
                 ],
               );
             }
           },
         )
-
-            /*
-        StaggeredGrid.count(
-            crossAxisCount: 2,
-          crossAxisSpacing: 2.0,
-          mainAxisSpacing: 2.0,
-          children: [
-
-            //Seccion programa
-            Stack(
-              children: [
-                Positioned(
-                  bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        enableInfiniteScroll: false,
-                        initialPage: 0,
-                        autoPlay: false
-                      ),
-
-                      items: ProgramaActos.map((item) {
-                        return Container(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                          child: Stack(
-                            children: [
-                              GestureDetector(
-                                onTap: (){
-                                  print("Pulsando sobre ${ProgramaActos.indexOf(item)}");
-                                },
-
-                                child: Container(
-                                  child: Image.network(
-                                    //item.url_background,
-                                    "https://cdn.pixabay.com/photo/2022/05/12/12/55/sunset-7191546_960_720.jpg",
-                                    fit: BoxFit.cover,
-                                    width: 1000.0,
-                                  ),
-                                ),
-                              ),
-
-                              Positioned(
-                                bottom: 0.0,
-                                  left: 0.0,
-                                  right: 0.0,
-                                  child: Container(
-                                    decoration: const BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color.fromARGB(200, 0, 0, 0),
-                                          Color.fromARGB(0, 0, 0, 0)
-                                        ],
-                                        begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter
-                                      ),
-                                    ),
-
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 10.0, horizontal: 20.0
-                                    ),
-                                    child: const Text(
-                                      //item.fecha,
-                                      "3 de Julio",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.bold
-                                      ),
-                                    ),
-                                  )
-                              )
-
-
-                            ],
-                          ),
-                        ),
-                      );
-                      }).toList()
-                    ),
-                ),
-
-                Positioned(
-                  top: 50.0,
-                    right: 0,
-                    child: Container(
-                      decoration: const BoxDecoration(color: Colors.red),
-                      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                      child: const Text(
-                        'Programa',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold
-                        ),
-                      ),
-                    )
-                )
-
-              ],
-            )
-
-          ],
-
-        ),
-
-        */
       ),
     );
   }
 }
 
 
-
+/*
 const _defaultColor = Color(0xFF34568B);
 
 class Tile extends StatelessWidget {
@@ -296,3 +191,4 @@ class _InteractiveTileState extends State<InteractiveTile> {
     );
   }
 }
+ */

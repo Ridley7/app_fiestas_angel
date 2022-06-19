@@ -1,4 +1,5 @@
 import 'package:app_fiestas_angel/models/programa.dart';
+import 'package:app_fiestas_angel/pages/detalle_programa.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -39,7 +40,14 @@ class CarouselSuperior extends StatelessWidget {
                           item.url_background,
                         ),
                         onTap: (){
-                          print("Pulsando la imagen numero ${programa.lista_programa.indexOf(item)}");
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetallePrograma(programa: item)
+                              )
+                          );
+
                         },
                       ),
 
