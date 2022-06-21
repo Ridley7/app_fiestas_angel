@@ -8,12 +8,15 @@ class SectionHome extends StatelessWidget {
     required this.cells,
     required this.section_name,
     required this.background_image,
+    required this.ruta,
+
   }) : super(key: key);
 
   final Size size;
   final int cells;
   final String section_name;
   final String background_image;
+  final String ruta;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +26,7 @@ class SectionHome extends StatelessWidget {
         child: GestureDetector(
           onTap: (){
             //Ruta a la seccion de historia.
+            Navigator.pushNamed(context, ruta);
           },
           child: Container(
             decoration: BoxDecoration(

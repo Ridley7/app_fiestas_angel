@@ -48,6 +48,7 @@ class HomePage extends StatelessWidget {
                     cells: 2,
                     section_name: "Historia",
                     background_image: "secion_historia_vaquilla.jpg",
+                    ruta: "historia",
                   ),
 
                   //Seccion penas
@@ -55,7 +56,8 @@ class HomePage extends StatelessWidget {
                       size: size,
                       cells: 1,
                       section_name: "Peñas",
-                      background_image: 'seccion_penas.JPG'
+                      background_image: 'seccion_penas.JPG',
+                    ruta: "penas",
                   ),
 
                   //Seccion notificaciones
@@ -63,7 +65,8 @@ class HomePage extends StatelessWidget {
                       size: size,
                       cells: 1,
                       section_name: "Notificaciones",
-                      background_image: 'seccion_notificaciones.JPG'
+                      background_image: 'seccion_notificaciones.JPG',
+                    ruta: "notificaciones",
                   ),
 
                 ],
