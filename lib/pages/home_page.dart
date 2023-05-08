@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
 
       body: SafeArea(
         child: FutureBuilder(
-          future: HttpHandler().getPrograma(),
+          future: HttpHandler().getProgramaAyto(),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if(!snapshot.hasData){
               return SizedBox(
